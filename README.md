@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Stoke.se Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Project Name**: `stoke_website`  
+**Version**: `0.1.0`  
+**Status**: Initial Boilerplate Setup  
+**Hosting**: Google Cloud (`stoke-se-website` project)  
+**Framework**: React (with Material UI)  
+**Location**: Umeå, Sweden
 
-## Available Scripts
+## 🌊 Project Overview
 
-In the project directory, you can run:
+This is the initial boilerplate for **Stoke.se**, a modern web application for a wing foiling tuition and equipment sales company based in Umeå.
 
-### `npm start`
+The site will provide information about:
+- Wing foiling lessons and courses
+- Equipment sales and rentals
+- Local conditions and community updates
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧱 Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React 19** – Frontend framework
+- **Material UI 7** – Design system and UI components
+- **React Router 7** – Client-side routing
+- **i18next** – Internationalization support (multi-language)
+- **Testing Library** – DOM and user interaction testing utilities
 
-### `npm test`
+## 🚀 Project Scripts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start       # Runs the app in development mode
+npm run build   # Builds the app for production
+npm test        # Launches the test runner
+npm run eject   # Ejects the app (not recommended unless necessary)
+```
 
-### `npm run build`
+## 📁 Project Structure
+The project currently follows the default Create React App structure. Future development will introduce:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+/components – Reusable UI components
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+/pages – Route-based page components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+/assets – Images, fonts, and branding assets
 
-### `npm run eject`
+/locales – Language files for i18next
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## ☁️ Deployment
+The project is deployed to Google Cloud under the project ID: stoke-se-website. Continuous deployment and domain setup will be configured in later stages.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📌 Next Steps
+Build the homepage layout with hero section and course intro
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Set up navigation and footer
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Add basic routing and placeholder pages
 
-## Learn More
+Define site structure (Tuition, Shop, About, Contact)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Integrate Google Cloud Hosting and custom domain
