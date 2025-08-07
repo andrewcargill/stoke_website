@@ -36,3 +36,40 @@
     transform: rotate(360deg);
   }
 }
+
+/* Animations (global) */
+@keyframes waveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 110% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes waveMotion {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes riderPass {
+  0%   { transform: translateX(-550%) scale(3.5); opacity: 0; }
+  10%  { opacity: 1; }
+  50%  { transform: translateX(0%) scale(1); opacity: 1; }
+  100% { transform: translate(250%, -50%) scale(0.6); opacity: 0; } /* exit right, higher, smaller */
+}
+
+/* Motion-safe defaults */
+@media (prefers-reduced-motion: reduce) {
+  .no-motion { animation: none !important; }
+}
+
+/* Utility classes */
+.logo-water {
+  background: linear-gradient(90deg, #edf4f5ff, #2196f3, #eef2f2ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: waveGradient 10s ease infinite, waveMotion 4s ease-in-out infinite;
+}
+.rider-pass {
+  animation: riderPass 4s ease-in-out forwards;
+}
+
