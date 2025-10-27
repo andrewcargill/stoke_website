@@ -1,0 +1,103 @@
+.scroll-landing {
+  width: 100%;
+  overflow-x: hidden;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  font-family: 'Verdana', sans-serif;
+}
+
+/* === NAVIGATION === */
+.scroll-nav {
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 31, 47, 0.95);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1000;
+  border-bottom: 2px solid #f94d6a; /* Coral pink underline */
+}
+
+.nav-link {
+  color: #f1ff62; /* Bright yellow-lime */
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #4ef0f9; /* Bright cyan */
+  text-shadow: 0 0 6px #4ef0f9;
+}
+
+.nav-link.active {
+  text-decoration: underline;
+  color: #f94d6a; /* Coral pink */
+}
+
+/* === SECTIONS === */
+.scroll-section {
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  background: transparent ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-margin-top: 70px;
+  transition: background 0.5s ease;
+
+}
+
+.hero-section {
+  padding: 0;            /* remove default padding */
+  height: 100vh;         /* fill viewport height */
+  min-height: unset;     /* override inherited min-height */
+  background: none;      /* remove any background from .scroll-section */
+}
+
+/* Alternate background vibes */
+.scroll-section:nth-of-type(odd) {
+  background: #00c2cb; /* Cyan beach blue */
+}
+
+.scroll-section:nth-of-type(even) {
+  background: #e8ff9e; /* Pale neon yellow */
+}
+
+.scroll-section[name="what-we-do"],
+
+
+/* === TYPOGRAPHY === */
+.section-title {
+  font-weight: 800;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #f94d6a; /* Coral pink */
+  margin-bottom: 1rem;
+  font-family: 'Pacifico', cursive;
+}
+
+.section-text {
+  color: #1a1a1a;
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  margin-top: 1rem;
+  font-family: 'Verdana', sans-serif;
+}
+
+/* === GLOBAL === */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,39 @@
+.about-section {
+  padding: 120px 20px;
+  background-color: #001f2f;
+  color: #f1ff62;
+}
+
+.about-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-box {
+  padding: 1rem 2rem;
+  border: 2px solid #f1ff62;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+}
+
+.about-box.left {
+  align-self: flex-start;
+  background-color: #002a3f;
+}
+
+.about-box.right {
+  align-self: flex-end;
+  background-color: #003d5c;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  max-width: 700px;
+  line-height: 1.6;
+}

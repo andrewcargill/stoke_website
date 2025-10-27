@@ -13,60 +13,65 @@ const HomePageMailingList = () => {
   };
 
   return (
-    <Box
-      sx={{
-        mt: 4,
-        p: 3,
-        bgcolor: "background.paper",
-        borderRadius: 2,
-        boxShadow: 2,
-        maxWidth: 400,
-        mx: "auto",
-        textAlign: "center",
-      }}
-    >
-      {submitted ? (
-        <Typography variant="h6" color="primary">
-          ✅ Thanks {name || "friend"}! You’ve been added to the mailing list.
+  <Box
+  sx={{
+    mt: 4,
+    p: 3,
+    bgcolor: "background.paper",
+    borderRadius: 2,
+    boxShadow: 2,
+    maxWidth: 400,
+    mx: "auto",
+    textAlign: "center",
+  }}
+   className="move-main"
+>
+  <Box >
+    {submitted ? (
+      <Typography variant="h6" color="text.primary" >
+        ✅ Thanks {name || "friend"}! You’ve been added to the mailing list.
+      </Typography>
+    ) : (
+      <form onSubmit={handleSubmit}>
+        <Typography variant="h6" gutterBottom color="text.primary">
+          Join Our Mailing List
         </Typography>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <Typography variant="h6" gutterBottom>
-            Join Our Mailing List
-          </Typography>
 
-          <TextField
-            fullWidth
-            label="Name"
-            variant="outlined"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            sx={{ mb: 2 }}
-          />
+        <TextField
+          fullWidth
+          label="Name"
+          variant="outlined"
+          color="white"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          sx={{ mb: 2 }}
+        />
 
-          <TextField
-            fullWidth
-            label="Email"
-            type="email"
-            variant="outlined"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            sx={{ mb: 2 }}
-            required
-          />
+        <TextField
+          fullWidth
+          label="Email"
+          type="email"
+          variant="outlined"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          sx={{ mb: 2 }}
+          required
+        />
 
-          <Button
-            type="submit"
-            variant="contained"
-            color="primary"
-            fullWidth
-            sx={{ fontWeight: "bold" }}
-          >
-            Add Me
-          </Button>
-        </form>
-      )}
-    </Box>
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          fullWidth
+          sx={{ fontWeight: "bold", }}
+        >
+          Add Me
+        </Button>
+      </form>
+    )}
+  </Box>
+</Box>
+
   );
 };
 

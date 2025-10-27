@@ -3,6 +3,8 @@ import { Box, Typography } from "@mui/material";
 import StokeLogo from "../component/StokeLogo";
 import stokeRider from "../media/images/stoke_rider.png";
 import HomePageMailingList from "../component/HomePageMailingList";
+import MaskTest from "../component/MaskTest";
+import ScrollReveal from "../component/ScrollReveal";
 
 const HomePage = () => {
   return (
@@ -23,7 +25,11 @@ const HomePage = () => {
         variant="h1"
         gutterBottom
         className="logo-water"
-        sx={{ display: "inline-block", fontWeight: "bold", textAlign: "center" }}
+        sx={{
+          display: "inline-block",
+          fontWeight: "bold",
+          textAlign: "center",
+        }}
       >
         <StokeLogo size={2} />
       </Typography>
@@ -42,18 +48,22 @@ const HomePage = () => {
       />
 
       {/* Under construction */}
-      <Box mt={4} sx={{ width: "100%", maxWidth: 600 }}>
+      {/* <Box mt={4} sx={{ width: "100%", maxWidth: 600 }}>
         <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
           🏗️ Our new site is under construction
         </Typography>
       </Box>
       <Box mt={4} sx={{ width: "100%", maxWidth: 600 }}>
         <Typography variant="subtitle1" sx={{ textAlign: "center" }}>
-         <HomePageMailingList />
+          <HomePageMailingList />
         </Typography>
-      </Box>
+      </Box> */}
 
 
+      <MaskTest />
+
+      <ScrollReveal />
+      
     </Box>
   );
 };

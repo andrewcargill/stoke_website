@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="fade" gradientTransform="rotate(90)">
+      <stop offset="60%" stop-color="white"></stop>
+      <stop offset="100%" stop-color="black" stop-opacity="0"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#fade)"></rect>
+  <path d="M0,280 Q100,320 200,280 T400,280 L400,400 L0,400 Z" fill="black"></path>
+</svg>
