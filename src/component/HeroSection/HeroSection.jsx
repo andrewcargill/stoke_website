@@ -1,28 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Typography, Button, Box, useMediaQuery } from "@mui/material";
 import { Link as ScrollLink, Element } from "react-scroll";
+import { SeasonContext } from "../../context/SeasonContext";
 import surfImage from "../../media/images/stoke_rider.webp";
 import snowImage from "../../media/images/snowboarder.jpg";
+
+
 import "./HeroSection.css";
 
+
 const HeroSection = () => {
+
+  const { colors } = useContext(SeasonContext);
+
+  const { season } = useContext(SeasonContext);
   const { scrollY } = useScroll();
   const isMobile = useMediaQuery("(max-width:768px)");
 
-  // === Desktop / Tablet Parallax ===
-  const yBg = useTransform(scrollY, [0, 300], [0, 30]);
-  const yMid = useTransform(scrollY, [0, 300], [0, -80]);
-  const yFg = useTransform(scrollY, [0, 300], [0, -120]);
+  // === Season-based parallax settings ===
+  const yBg = useTransform(scrollY, [0, 300], [0, season === "winter" ? 10 : 30]);
+  const yMid = useTransform(scrollY, [0, 300], [0, season === "winter" ? -30 : -80]);
+  const yFg = useTransform(scrollY, [0, 300], [0, season === "winter" ? -60 : -120]);
   const opacityTitle = useTransform(scrollY, [0, 200], [1, 0.7]);
   const scaleTitle = useTransform(scrollY, [0, 200], [1, 0.95]);
 
-  // === Mobile Pan ===
+  // === Mobile only ===
   const bgX = useTransform(scrollY, [0, 600], ["80%", "0%"]);
-
-  // === Mobile text motion ===
-  const mobileY = useTransform(scrollY, [0, 200], [0, 200]);   // moves down
-  const mobileOpacity = useTransform(scrollY, [0, 600], [1, 0]); // fades out
+  const mobileY = useTransform(scrollY, [0, 200], [0, 200]);
+  const mobileOpacity = useTransform(scrollY, [0, 600], [1, 0]);
 
   return (
     <Element name="hero" className="hero-element">
@@ -33,12 +39,17 @@ const HeroSection = () => {
         transition={{ duration: 1.4, ease: "easeOut" }}
       >
         {/* === BACKGROUND LAYER === */}
-        {!isMobile && <motion.div className="parallax-bg" style={{ y: yBg }} />}
+        {!isMobile && (
+          <motion.div className="parallax-bg" style={{ backgroundColor: colors.bgOdd, y: yBg }} />
+        )}
 
-        {/* === MIDGROUND IMAGE === */}
+        {/* === MIDGROUND IMAGE (dynamic) === */}
         <motion.div
           className="parallax-mid"
-          style={isMobile ? { backgroundPosition: bgX } : { y: yMid }}
+          style={{
+            ...(isMobile ? { backgroundPosition: bgX } : { y: yMid }),
+            backgroundImage: `url(${season === "summer" ? surfImage : snowImage})`,
+          }}
         />
 
         {/* === FOREGROUND TEXT === */}
@@ -50,7 +61,7 @@ const HeroSection = () => {
           style={
             isMobile
               ? { y: mobileY, opacity: mobileOpacity }
-              : { y: yFg, opacity: opacityTitle, scale: scaleTitle } 
+              : { y: yFg, opacity: opacityTitle, scale: scaleTitle }
           }
         >
           <Box sx={{ mb: 2 }}>
@@ -58,7 +69,9 @@ const HeroSection = () => {
               STOKE.SE
             </Typography>
             <Typography variant="h5" className="parallax-subtitle" gutterBottom>
-              Västerbottens Wingfoil
+              {season === "summer"
+                ? "Västerbottens Wingfoil"
+                : "Winter Stoke Adventures"}
             </Typography>
             <ScrollLink to="what-we-do" smooth duration={800}>
               <Button variant="outlined" className="parallax-button">

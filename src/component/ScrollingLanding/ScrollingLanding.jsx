@@ -13,6 +13,7 @@ import CoursesSection from "../CoursesSection/CoursesSection";
 import PartnersSection from "../PartnersSection/PartnersSection";
 import FAQSection from "../FAQSection/FAQSection";
 import ContactSection from "../ContactSection/ContactSection";
+import SeasonToggle from "../SeasonToggle";
 
 const sections = [
   { id: "hero", title: "Stoke the Wind 🏴‍☠️💨" },
@@ -33,6 +34,7 @@ const ScrollLanding = () => {
       </Box>
 
       <DesktopNav />
+      <SeasonToggle />
 
       {/* === CONTENT === */}
       {sections.map((section) =>

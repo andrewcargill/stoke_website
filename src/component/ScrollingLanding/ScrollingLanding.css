@@ -44,7 +44,7 @@
 /* === SECTIONS === */
 
 .scroll-section-about {
-  background-color: aqua;
+  background-color: transparent;
   min-height: 100svh;
   padding: 5rem 1rem 3rem;
   display: flex;
@@ -69,23 +69,23 @@
 }
 
 .scroll-section:nth-of-type(odd) {
-  background: #111;
+  /* background: #111; */
 }
 
 .scroll-section:nth-of-type(even) {
-  background: #1a1a1a;
+  /* background: #1a1a1a; */
 }
 
 /* === TYPOGRAPHY === */
 .section-title {
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 4rem);
-  color: #cfff04;
+  /* color: #cfff04; */
   margin-bottom: 1rem;
 }
 
 .section-text {
-  color: #fff;
+  /* color: #fff; */
   opacity: 0.8;
   max-width: 600px;
   line-height: 1.6;

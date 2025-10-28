@@ -1,7 +1,6 @@
 .about-section {
   padding: 120px 20px;
-  background-color: #001f2f;
-  color: #f1ff62;
+
 }
 
 .about-inner {
@@ -16,7 +15,7 @@
 
 .about-box {
   padding: 1rem 2rem;
-  border: 2px solid #f1ff62;
+  /* border: 2px solid #f1ff62; */
   border-radius: 12px;
   width: 90%;
   max-width: 500px;
@@ -24,12 +23,12 @@
 
 .about-box.left {
   align-self: flex-start;
-  background-color: #002a3f;
+
 }
 
 .about-box.right {
   align-self: flex-end;
-  background-color: #003d5c;
+
 }
 
 .about-text {

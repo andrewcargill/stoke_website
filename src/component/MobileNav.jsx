@@ -13,6 +13,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Link as ScrollLink } from "react-scroll";
 import AdaptiveIconButton from "./AdaptiveIconButton";
 
+
 const sections = [
   { id: "hero", title: "Stoke the Wind 🏴‍☠️💨" },
   { id: "what-we-do", title: "What We Do" },
@@ -42,6 +43,7 @@ const MobileNav = () => {
         justifyContent: "flex-end",
       }}
     >
+           
       {/* <IconButton onClick={toggleDrawer(true)} sx={{ color: "#f1ff62" }}>
         <MenuIcon />
       </IconButton> */}
@@ -71,6 +73,7 @@ const MobileNav = () => {
           role="presentation"
        
         >
+        
        <List>
   {sections.map((section) => (
     <ScrollLink
