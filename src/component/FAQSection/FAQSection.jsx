@@ -2,9 +2,8 @@ import React, { useRef } from "react";
 import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Element } from "react-scroll";
 import { motion, useScroll, useTransform } from "framer-motion";
-import imageMask from "../../media/wave-yellow-mask.svg";
 
-const AboutSection = () => {
+const FAQSection = () => {
   const ref = useRef(null);
   const isMobile = useMediaQuery("(max-width:768px)");
 
@@ -13,28 +12,25 @@ const AboutSection = () => {
     offset: ["start end", "end start"],
   });
 
+  // === DESKTOP/TABLET ===
   const boxLeftX = useTransform(scrollYProgress, [0, 0.3], [-200, 0]);
-  const textX = useTransform(scrollYProgress, [0.1, 0.5], [100, 0]);
   const boxRightX = useTransform(scrollYProgress, [0.4, 0.7], [200, 0]);
-  const textOpacity = useTransform(scrollYProgress, [0.3, 0.6], [0, 1]);
-  const taglineOpacity = useTransform(scrollYProgress, [0.4, 0.7], [0, 1]);
+  const textX = useTransform(scrollYProgress, [0.1, 0.5], [100, 0]);
+  const textOpacity = useTransform(scrollYProgress, [0.2, 0.6], [0, 1]);
 
+  // === MOBILE ===
   const mobileYTitle = useTransform(scrollYProgress, [0.0, 0.2], [-200, 0]);
   const mobileOpacityTitle = useTransform(scrollYProgress, [-1, 0.3], [0, 1]);
   const mobileYText = useTransform(scrollYProgress, [0.1, 0.3], [50, 0]);
   const mobileOpacityText = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
-  const mobileRotate = useTransform(scrollYProgress, [0.6, 0.8], [0, 360]);
-  const mobileFadeOut = useTransform(scrollYProgress, [0.95, 9.99], [1, 0]);
-  const mobileYTagline = useTransform(scrollYProgress, [0.2, 0.4], [50, 0]);
-  const mobileOpacityTagline = useTransform(scrollYProgress, [0.25, 0.4], [0, 1]);
 
   return (
-    <Element name="what-we-do" className="scroll-section-about" data-bg="dark">
-      <motion.div ref={ref} className="about-section">
-        <Box className="about-inner">
+    <Element name="our-courses" className="scroll-section" data-bg="dark">
+      <motion.div ref={ref} className="courses-section">
+        <Box className="courses-inner">
           {/* === LEFT / TITLE === */}
           <motion.div
-            className="about-box left"
+            className="courses-box left"
             style={
               isMobile
                 ? { y: mobileYTitle, opacity: mobileOpacityTitle }
@@ -42,13 +38,13 @@ const AboutSection = () => {
             }
           >
             <Typography variant="h2" className="section-title">
-              About
+              Frequently Asked Questions
             </Typography>
           </motion.div>
 
           {/* === CENTER TEXT === */}
           <motion.div
-            className="about-text"
+            className="courses-text"
             style={
               isMobile
                 ? { y: mobileYText, opacity: mobileOpacityText }
@@ -56,37 +52,29 @@ const AboutSection = () => {
             }
           >
             <Typography variant="body1" className="section-text">
-              Stoke.se delivers thrilling wing foiling lessons and events that
-              connect you to the wind and water. We empower beginners and
-              enthusiasts to ride with confidence, stoke, and style.
+              Here are some of the most common questions we receive about our
+              wing foiling lessons and services. If you have more questions,
+              feel free to reach out!
             </Typography>
-
           </motion.div>
 
-          {/* === RIGHT BOX / TAGLINE === */}
+          {/* === RIGHT BOX / HIGHLIGHT === */}
           <motion.div
-            className="about-box right"
+            className="courses-box right"
             style={
               isMobile
-                ? {
-                    y: mobileYTagline,
-                    opacity: mobileOpacityTagline,
-                    rotate: mobileRotate,
-                    opacity: mobileFadeOut,
-                  }
-                : { x: boxRightX, opacity: taglineOpacity }
+                ? { opacity: mobileOpacityText }
+                : { x: boxRightX, opacity: textOpacity }
             }
           >
             <Typography variant="body2" className="section-text">
-              Come ride with us 🌊💨
+              Group & Private Sessions | Kids & Adults | All Levels
             </Typography>
           </motion.div>
         </Box>
       </motion.div>
-
-      <img src={imageMask} alt="wave mask" className="wave-transition" />
     </Element>
   );
 };
 
-export default AboutSection;
+export default FAQSection;

@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Typography, Button, Box, useMediaQuery } from "@mui/material";
 import { Link as ScrollLink, Element } from "react-scroll";
 import surfImage from "../../media/images/stoke_rider.webp";
+import snowImage from "../../media/images/snowboarder.jpg";
 import "./HeroSection.css";
 
 const HeroSection = () => {
@@ -48,8 +49,8 @@ const HeroSection = () => {
           transition={{ delay: 4, duration: 1, ease: "easeOut" }}
           style={
             isMobile
-              ? { y: mobileY, opacity: mobileOpacity } // 👈 mobile scroll animation
-              : { y: yFg, opacity: opacityTitle, scale: scaleTitle } // desktop parallax
+              ? { y: mobileY, opacity: mobileOpacity }
+              : { y: yFg, opacity: opacityTitle, scale: scaleTitle } 
           }
         >
           <Box sx={{ mb: 2 }}>

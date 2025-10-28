@@ -10,11 +10,12 @@ import CinematicLanding from './component/CinematicLanding/CinematicLanding';
 import ParallaxHero from './component/ParallaxHero';
 import ScrollLanding from './component/ScrollingLanding/ScrollingLanding';
 import ScrollTest from './component/ScrollTest';
-
+import  { SeasonProvider } from './context/SeasonContext';
 
 
 function App() {
   return (
+    <SeasonProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Router>
@@ -28,6 +29,7 @@ function App() {
         </Routes>
       </Router>
     </ThemeProvider>
+    </SeasonProvider>
   );
 }
 

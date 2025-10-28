@@ -24,7 +24,7 @@
 }
 
 .nav-link {
-  color: #f1ff62; /* Bright yellow-lime */
+  color: #f1ff62;
   font-family: "Orbitron", sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -46,6 +46,22 @@
 }
 
 /* === SECTIONS === */
+.scroll-section-about {
+
+  min-height: 100vh;
+  padding: 0;
+  display: flex;
+  background: transparent ;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  scroll-margin-top: 70px;
+  transition: background 0.5s ease;
+    background: #00c3ca;
+    position: relative;
+
+}
 .scroll-section {
   min-height: 100vh;
   padding: 0;
@@ -100,4 +116,60 @@
 /* === GLOBAL === */
 html {
   scroll-behavior: smooth;
+}
+
+
+/* === OFFER SECTION === */
+
+.offer-title {
+
+  animation: waveMotion 6s ease-in-out infinite;
+            
+  
+}
+
+/* === IMAGE MASK - WHAT WE OFFER === */
+ @keyframes waveFloat {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+}
+
+.wave-transition {
+  position: absolute;
+  bottom: 0;
+  left: -6%;
+  width: 110%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  animation: waveFloat 3s ease-in-out infinite;
+   transform: scaleX(1.5); /* 105% width */
+  transform-origin: center bottom; /* Keeps it centered */
+}
+
+/* === ANIMATIONS === */
+
+@keyframes waveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 110% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+@keyframes waveMotion {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(-2px) rotate(0.3deg); }
+  50%  { transform: translateY(-4px) rotate(0deg); }
+  75%  { transform: translateY(-2px) rotate(-0.3deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes waveStretch {
+  0%, 100% { transform: scaleX(1.0); }
+  50%      { transform: scaleX(1.02); }
 }

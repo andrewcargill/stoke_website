@@ -42,6 +42,20 @@
 }
 
 /* === SECTIONS === */
+
+.scroll-section-about {
+  background-color: aqua;
+  min-height: 100svh;
+  padding: 5rem 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+   scroll-margin-top: 70px; /* MATCH your nav height */
+
+}
+
 .scroll-section {
   min-height: 100svh;
   padding: 5rem 1rem 3rem;
@@ -51,6 +65,7 @@
   align-items: center;
   text-align: center;
    scroll-margin-top: 70px; /* MATCH your nav height */
+
 }
 
 .scroll-section:nth-of-type(odd) {
@@ -81,3 +96,21 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* === IMAGE MASK - WHAT WE OFFER === */
+.wave-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+ 
+}
+
+.about-section {
+  position: relative;
+  overflow: hidden;
+
+} 
