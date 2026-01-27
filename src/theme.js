@@ -46,12 +46,12 @@ let theme = createTheme({
       lineHeight: 1.5,
     },
     body1: {
-      fontSize: "clamp(0.95rem, 1.5vw, 1.2rem)",
-      lineHeight: 1.6,
+      fontSize: "clamp(1rem, 1.3vw, 1.5rem)",
+      lineHeight: 1.75,
       color: "#ffffff",
     },
     body2: {
-      fontSize: "clamp(0.85rem, 1.2vw, 1rem)",
+      fontSize: "clamp(0.9rem, 0.9vw, 1.1rem)",
       lineHeight: 1.7,
       color: "#d1d1d1",
     },
@@ -59,9 +59,9 @@ let theme = createTheme({
 });
 
 // 🔧 Enable MUI’s built-in responsive scaling across breakpoints
-theme = responsiveFontSizes(theme, {
-  breakpoints: ["sm", "md", "lg"],
-  factor: 2, // scaling aggressiveness (1 = subtle, 3 = bold)
-});
+// theme = responsiveFontSizes(theme, {
+//   breakpoints: ["sm", "md", "lg"],
+//   factor: 2, 
+// });
 
 export default theme;

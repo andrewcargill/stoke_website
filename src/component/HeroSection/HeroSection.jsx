@@ -5,8 +5,6 @@ import { Link as ScrollLink, Element } from "react-scroll";
 import { SeasonContext } from "../../context/SeasonContext";
 import surfImage from "../../media/images/stoke_rider.webp";
 import snowImage from "../../media/images/snowboarder.jpg";
-
-
 import "./HeroSection.css";
 
 

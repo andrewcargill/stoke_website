@@ -20,7 +20,7 @@ function App() {
       <CssBaseline />
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<ScrollLanding />} />
           <Route path="/scroll" element={<ScrollReveal />} />
           <Route path="/parallax" element={<ParallaxHero />} />
           <Route path="/cinematic" element={<CinematicLanding />} />

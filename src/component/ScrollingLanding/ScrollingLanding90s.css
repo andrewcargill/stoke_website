@@ -62,6 +62,57 @@
     position: relative;
 
 }
+
+/* About inner container */
+.about-inner {
+  width: 100%;
+  padding: 0 1.25rem;
+  box-sizing: border-box;
+
+  /* mobile default */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  /* keeps content from stretching too wide */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Columns */
+.about-col {
+  width: 100%;
+}
+
+/* Image */
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+/* Desktop: 2 columns */
+@media (min-width: 900px) {
+  .about-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; /* text a bit wider */
+    align-items: center;
+    text-align: left; /* important on desktop */
+    gap: 3rem;
+    
+  }
+
+  /* Stop the global centering vibe from making it feel “mobile” */
+  .scroll-section-about {
+    text-align: left;
+  }
+
+ 
+}
+
+
 .scroll-section {
   min-height: 100vh;
   padding: 0;
@@ -107,8 +158,8 @@
 .section-text {
   color: #1a1a1a;
   max-width: 700px;
-  font-size: 1.1rem;
-  line-height: 1.75;
+  /* font-size: 1.1rem;
+  line-height: 1.75; */
   margin-top: 1rem;
   font-family: 'Verdana', sans-serif;
 }
