@@ -12,6 +12,7 @@ const sections = [
   { id: "our-courses", title: "Our Courses" },
   { id: "our-partners", title: "Partners" },
   { id: "where-we-are", title: "Where We Are" },
+  { id: "faq", title: "FAQ" },
   { id: "contact", title: "How to Contact" },
 ];
 // const sections = [

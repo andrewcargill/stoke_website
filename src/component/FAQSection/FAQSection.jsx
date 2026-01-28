@@ -25,7 +25,7 @@ const FAQSection = () => {
   const mobileOpacityText = useTransform(scrollYProgress, [0.15, 0.3], [0, 1]);
 
   return (
-    <Element name="our-courses" className="scroll-section" data-bg="dark">
+    <Element name="faq" className="scroll-section" data-bg="dark">
       <motion.div ref={ref} className="courses-section">
         <Box className="courses-inner">
           {/* === LEFT / TITLE === */}

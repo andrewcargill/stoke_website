@@ -26,7 +26,7 @@ const WhatWeOfferSection = () => {
 
   return (
     <Element name="what-we-offer" className="scroll-section" data-bg="light">
-      <motion.div ref={ref} className="offer-section">
+      <motion.div ref={ref} className="what-we-offer">
         <Box className="offer-inner">
           {/* === TITLE BOX === */}
           <motion.div
