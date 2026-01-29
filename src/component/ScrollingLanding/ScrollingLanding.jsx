@@ -14,15 +14,17 @@ import PartnersSection from "../PartnersSection/PartnersSection";
 import FAQSection from "../FAQSection/FAQSection";
 import ContactSection from "../ContactSection/ContactSection";
 import SeasonToggle from "../SeasonToggle";
+import WhereAreWeSection from "../WhereAreWeSection/WhereAreWeSection";
 
 const sections = [
   { id: "hero", title: "Stoke the Wind 🏴‍☠️💨" },
   { id: "what-we-do", title: "What We Do" },
   { id: "what-we-offer", title: "What We Offer" },
   { id: "our-courses", title: "Our Courses" },
-  { id: "our-partners", title: "Our Partners" },
-  { id: "FAQ", title: "Frequently Asked Questions" },
   { id: "contact", title: "How to Contact" },
+  { id: "where-we-are", title: "Where Are We" },
+  { id: "FAQ", title: "Frequently Asked Questions" },
+  { id: "our-partners", title: "Our Partners" },
 ];
 
 const ScrollLanding = () => {
@@ -48,10 +50,12 @@ const ScrollLanding = () => {
           <CoursesSection key={section.id} />
         ) : section.id === "our-partners" ? (
           <PartnersSection key={section.id} />
-        ) : section.id === "FAQ" ? (
-          <FAQSection key={section.id} />
         ) : section.id === "contact" ? (
           <ContactSection key={section.id} />
+        ) : section.id === "where-we-are" ? (
+          <WhereAreWeSection key={section.id} />
+        ) : section.id === "faq" ? (
+          <FAQSection key={section.id} />
         ) : (
           <Element
             key={section.id}
@@ -66,7 +70,7 @@ const ScrollLanding = () => {
               Test content for {section.title}
             </Typography>
           </Element>
-        )
+        ),
       )}
     </Box>
   );
